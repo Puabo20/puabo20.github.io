@@ -84,6 +84,15 @@
     <p>Visual Layer Manager</p>
   </div>
 </section>
+<script>
+  document.querySelectorAll(".module-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const moduleName = card.querySelector("h3").textContent;
+      const fileName = moduleName.toLowerCase().replace(/[^a-z0-9]/g, '') + ".html";
+      window.location.href = fileName;
+    });
+  });
+</script>
 
 </body>
 </html>
