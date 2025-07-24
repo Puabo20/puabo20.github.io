@@ -89,7 +89,55 @@
 </div>
 
 </head>
-<body>
+<body>body {
+  display: flex;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d0d;
+  color: white;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #000;
+  border-right: 3px solid #00ffd0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.sidebar-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ffd0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.sidebar a:hover {
+  background-color: #1a1a1a;
+  color: #00ffd0;
+}
+
+.main-content {
+  margin-left: 220px;
+  padding: 30px;
+  flex: 1;
+}
+
 <div class="sidebar">
   <div class="sidebar-title">PUABO OS</div>
   <a href="dashboard.html">📊 Dashboard</a>
