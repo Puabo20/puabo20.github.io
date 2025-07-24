@@ -1,29 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
   <title>PUABO OS V200</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px #333;
+    }
+    .launch-btn {
+      background-color: #00ffcc;
+      color: #0d0d0d;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 2rem;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .launch-btn:hover {
+      background-color: #009e87;
+    }
+  </style>
 </head>
 <body>
-  <div id="os-container">
-
-    <nav id="sidebar">
-      <h2>PUABO OS V200</h2>
-      <ul id="module-list">
-        <!-- Modules load here -->
-      </ul>
-      <button id="launch-btn">Launch PUABO OS</button>
-    </nav>
-
-    <main id="content">
-      <h1>Welcome to PUABO OS V200</h1>
-      <p>All systems connected. Ready to deploy.</p>
-    </main>
-
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-  <script src="js/main.js"></script>
+  <h1>Welcome to PUABO OS V200</h1>
+  <p>All systems connected. Ready to deploy.</p>
+  <button class="launch-btn" onclick="window.location.href='desktop.html'">Launch PUABO OS</button>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PUABO OS V200</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px #333;
+    }
+    .launch-btn {
+      background-color: #00ffcc;
+      color: #0d0d0d;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 2rem;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .launch-btn:hover {
+      background-color: #009e87;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to PUABO OS V200</h1>
+  <p>All systems connected. Ready to deploy.</p>
+  <button class="launch-btn" onclick="window.location.href='desktop.html'">Launch PUABO OS</button>
 </body>
 </html>
