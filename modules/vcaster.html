@@ -1,0 +1,67 @@
+<div class="module-title">📡 V-Caster</div>
+
+<div class="vcaster-container">
+  <div class="stream-info">
+    <p><strong>Status:</strong> <span id="stream-status">Offline</span></p>
+    <button id="go-live-btn" onclick="toggleStream()">Go Live</button>
+  </div>
+
+  <div class="stream-panel">
+    <p><strong>Stream URL:</strong> <span id="stream-url">Not streaming</span></p>
+    <p><strong>Viewers:</strong> <span id="viewer-count">0</span></p>
+  </div>
+</div>
+
+<style>
+  .vcaster-container {
+    background: #111;
+    color: #0ff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: auto;
+  }
+  .stream-info, .stream-panel {
+    margin-bottom: 15px;
+  }
+  #go-live-btn {
+    background: #0ff;
+    color: #111;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  #go-live-btn:hover {
+    background: #06a;
+  }
+</style>
+
+<script>
+  let isStreaming = false;
+
+  function toggleStream() {
+    const statusEl = document.getElementById('stream-status');
+    const urlEl = document.getElementById('stream-url');
+    const viewersEl = document.getElementById('viewer-count');
+    const btn = document.getElementById('go-live-btn');
+
+    if (!isStreaming) {
+      isStreaming = true;
+      statusEl.textContent = 'Live';
+      urlEl.textContent = 'rtmp://puabo.stream/live/puabostream';
+      viewersEl.textContent = Math.floor(Math.random() * 1000) + 1; // Random viewers for demo
+      btn.textContent = 'End Stream';
+      btn.style.background = '#a00';
+    } else {
+      isStreaming = false;
+      statusEl.textContent = 'Offline';
+      urlEl.textContent = 'Not streaming';
+      viewersEl.textContent = '0';
+      btn.textContent = 'Go Live';
+      btn.style.background = '#0ff';
+    }
+  }
+</script>
