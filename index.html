@@ -2,20 +2,73 @@
 <html>
 <head>
   <title>PUABO OS V200</title>
+  <style>
+    body {
+      background:#0d0d0d; color:#00ffcc; font-family: monospace;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+      height: 100vh; margin: 0; padding: 1rem;
+    }
+    ul { list-style: none; padding: 0; margin: 1rem 0; }
+    li {
+      cursor: pointer;
+      margin: 0.5rem 0;
+      padding: 0.5rem 1rem;
+      background: #003333;
+      border-radius: 5px;
+      transition: background 0.3s;
+      width: 200px;
+      text-align: center;
+    }
+    li:hover { background: #005555; }
+    #module-content {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 1px solid #00ffcc;
+      width: 80%;
+      min-height: 300px;
+      background: #001a1a;
+      border-radius: 10px;
+    }
+  </style>
 </head>
-<body style="background:#0d0d0d; color:#00ffcc; font-family: monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0;">
-  <h1>Welcome to PUABO OS V200</h1>
-  <p>All systems connected. Ready to deploy.</p>
+<body>
+  <h1>PUABO OS V200</h1>
+  <p>Click a module to open it:</p>
+  <ul id="modules-list">
+    <li onclick="loadModule('vcaster')">V-Caster</li>
+    <li onclick="loadModule('streamcore')">StreamCore</li>
+    <li onclick="loadModule('glitch')">Glitch</li>
+  </ul>
 
-  <button onclick="launchPUABO()"
-          style="background:#00ffcc; color:#0d0d0d; border:none; padding:1rem 2rem; font-size:1.2rem; cursor:pointer; margin-top:2rem; border-radius:8px; transition:0.3s;">
-    Launch PUABO OS
-  </button>
+  <div id="module-content">
+    <em>Select a module to see it here</em>
+  </div>
 
   <script>
-    function launchPUABO() {
-      alert('Launching PUABO OS Modules...');
-      window.location.href = "desktop.html"; // This loads the next page
+    function loadModule(name) {
+      const contentDiv = document.getElementById('module-content');
+
+      if (name === 'vcaster') {
+        contentDiv.innerHTML = `
+          <h2>V-Caster Module</h2>
+          <p>This is your live V-Caster module interface.</p>
+          <button onclick="alert('Starting V-Caster...')">Start V-Caster</button>
+        `;
+      } else if (name === 'streamcore') {
+        contentDiv.innerHTML = `
+          <h2>StreamCore Module</h2>
+          <p>This is your live StreamCore interface.</p>
+          <button onclick="alert('Launching StreamCore...')">Launch StreamCore</button>
+        `;
+      } else if (name === 'glitch') {
+        contentDiv.innerHTML = `
+          <h2>Glitch Module</h2>
+          <p>This is your Glitch frontend interface.</p>
+          <button onclick="alert('Opening Glitch frontend...')">Open Glitch</button>
+        `;
+      } else {
+        contentDiv.innerHTML = `<p>Module not found.</p>`;
+      }
     }
   </script>
 </body>
