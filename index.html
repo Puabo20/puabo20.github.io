@@ -1,119 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PUABO OS V200</title>
-<link rel="stylesheet" href="style.css" />
-<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-<style>
-  body {
-    background: #0d0d0d;
-    color: #00ffcc;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0; padding: 0;
-    display: flex; flex-direction: column;
-    min-height: 100vh;
-  }
-  header {
-    background: #004d40;
-    padding: 1rem;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #00ffcc;
-  }
-  nav {
-    background: #00332f;
-    display: flex;
-    justify-content: space-around;
-    padding: 0.5rem 0;
-  }
-  nav a {
-    color: #00ffcc;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-  }
-  nav a:hover {
-    background: #00695c;
-    border-radius: 5px;
-  }
-  main {
-    flex-grow: 1;
-    padding: 2rem;
-  }
-  #modules-list {
-    list-style: none;
-    padding-left: 0;
-  }
-  #modules-list li {
-    background: #00332f;
-    margin: 0.5rem 0;
-    padding: 0.75rem 1rem;
-    border-radius: 5px;
-  }
-  button.launch-btn {
-    margin-top: 2rem;
-    background: #00ffcc;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 8px;
-    color: #0d0d0d;
-    font-weight: bold;
-  }
-  button.launch-btn:hover {
-    background: #009e87;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PUABO OS V200</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
 <body>
-<header>PUABO OS V200</header>
-<nav>
-  <a href="#modules">Modules</a>
-  <a href="#launch">Launch</a>
-</nav>
-<main>
-  <section id="modules">
-    <h2>System Modules:</h2>
-    <ul id="modules-list">Loading...</ul>
-  </section>
-  <section id="launch">
-    <button class="launch-btn" onclick="launchSystem()">Launch PUABO OS</button>
-  </section>
-</main>
+  <div id="launch-screen">
+    <h1>PUABO OS V200</h1>
+    <p>All systems connected. Ready to deploy.</p>
+    <button id="launch-btn">Launch PUABO OS</button>
+  </div>
 
-<script>
-  // Load modules from YAML and display
-  window.onload = function() {
+  <div id="os-interface" style="display: none;">
+    <nav id="sidebar">
+      <h2>Modules</h2>
+      <ul id="modules">
+        <li>Loading...</li>
+      </ul>
+    </nav>
+    <main id="main-content">
+      <h1>Welcome to PUABO OS V200</h1>
+      <p>Select a module from the left to get started.</p>
+    </main>
+  </div>
+
+  <script>
+    // Launch button handler
+    document.getElementById('launch-btn').addEventListener('click', () => {
+      document.getElementById('launch-screen').style.display = 'none';
+      document.getElementById('os-interface').style.display = 'flex';
+    });
+
+    // Load YAML modules
     fetch('puaboos.yaml')
-      .then(response => {
-        if (!response.ok) throw new Error("Failed to load YAML file: " + response.status);
-        return response.text();
-      })
+      .then(response => response.text())
       .then(yamlText => {
         const data = jsyaml.load(yamlText);
-        const modulesList = document.getElementById('modules-list');
-        modulesList.innerHTML = '';
-
+        const moduleList = document.getElementById('modules');
+        moduleList.innerHTML = '';
         data.modules.forEach(module => {
           const li = document.createElement('li');
           li.textContent = module.name;
-          modulesList.appendChild(li);
+          moduleList.appendChild(li);
         });
       })
       .catch(error => {
-        document.getElementById('modules-list').textContent = "Error loading modules.";
-        console.error("YAML loading error:", error);
+        document.getElementById('modules').innerText = 'Error loading modules.';
+        console.error('YAML load error:', error);
       });
-  };
-
-  function launchSystem() {
-    alert("Launching PUABO OS Modules...");
-    // Add more launch behavior here if needed
-  }
-</script>
+  </script>
 </body>
 </html>
