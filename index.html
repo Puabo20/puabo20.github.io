@@ -1,27 +1,10 @@
+<button id="launch-btn">Launch PUABO OS</button>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PUABO OS V200</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>PUABO OS V200</h1>
-    <p id="status">All systems connected. Ready to deploy.</p>
-    <button onclick="launchOS()">Launch PUABO OS</button>
-    <div id="modules-section" style="display:none;">
-      <h2>System Modules:</h2>
-      <ul id="modules-list"></ul>
-    </div>
-  </div>
-  <script src="script.js"></script>
 <script>
   document.getElementById("launch-btn").addEventListener("click", function () {
-    window.location.href = "os.html"; // This tells the button to open os.html
+    window.location.href = "os.html";
   });
 </script>
+
 </body>
 </html>
