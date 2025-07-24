@@ -1,47 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PUABO OS V200</title>
-<link rel="stylesheet" href="style.css" />
-<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PUABO OS V200</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>PUABO OS V200</h1>
-    <p>System Modules:</p>
-    <ul id="modules-list">Loading modules...</ul>
-    <button id="launch-btn">Launch PUABO OS</button>
+    <p id="status">All systems connected. Ready to deploy.</p>
+    <button onclick="launchOS()">Launch PUABO OS</button>
+    <div id="modules-section" style="display:none;">
+      <h2>System Modules:</h2>
+      <ul id="modules-list"></ul>
+    </div>
   </div>
-
-  <script>
-    window.onload = function() {
-      fetch('modules.yaml')
-        .then(response => {
-          if (!response.ok) throw new Error('Failed to load YAML: ' + response.status);
-          return response.text();
-        })
-        .then(yamlText => {
-          const data = jsyaml.load(yamlText);
-          const modulesList = document.getElementById('modules-list');
-          modulesList.innerHTML = '';
-          data.modules.forEach(module => {
-            const li = document.createElement('li');
-            li.textContent = module.name;
-            modulesList.appendChild(li);
-          });
-        })
-        .catch(err => {
-          const modulesList = document.getElementById('modules-list');
-          modulesList.textContent = 'Error loading modules.';
-          console.error(err);
-        });
-
-      document.getElementById('launch-btn').onclick = function() {
-        alert('Launching PUABO OS Modules...');
-      };
-    };
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

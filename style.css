@@ -1,11 +1,11 @@
+
 body {
-  background-color: #0d0d0d;
-  color: #00ffcc;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111;
+  color: #f0f0f0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   margin: 0;
 }
@@ -14,34 +14,17 @@ body {
   text-align: center;
 }
 
-h1 {
-  font-size: 3rem;
-  text-shadow: 2px 2px #333;
-}
-
-#modules-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 1rem 0;
-  font-size: 1.3rem;
-}
-
-#modules-list li {
-  margin: 0.3rem 0;
-}
-
-#launch-btn {
-  background-color: #00ffcc;
-  color: #0d0d0d;
+button {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
   border: none;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  border-radius: 8px;
-  transition: 0.3s;
-  margin-top: 2rem;
+  margin-top: 20px;
 }
 
-#launch-btn:hover {
-  background-color: #009e87;
+button:hover {
+  background-color: #218838;
 }

@@ -1,0 +1,9 @@
+
+- name: StreamCore
+  status: Active
+- name: PUABOAI SDK
+  status: Active
+- name: V-Screen
+  status: Inactive
+- name: Glitch UI
+  status: Active
