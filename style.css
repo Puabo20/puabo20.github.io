@@ -1,1 +1,61 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #1e1e2f;
+  color: #fff;
+}
+
+#launch-screen {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+#launch-btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #03dac6;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#os-interface {
+  display: flex;
+  height: 100vh;
+}
+
+#sidebar {
+  width: 250px;
+  background-color: #12121c;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#sidebar h2 {
+  margin-top: 0;
+  color: #03dac6;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+}
+
+#sidebar li:hover {
+  background-color: #333;
+}
+
+#main-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #2a2a40;
+}
 
