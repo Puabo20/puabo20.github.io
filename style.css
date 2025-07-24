@@ -1,3 +1,29 @@
+body {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.puabo-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #000;
+  border-bottom: 3px solid #00ffd0;
+}
+
+.puabo-logo {
+  height: 60px;
+  margin-right: 20px;
+}
+
+.puabo-title {
+  font-size: 28px;
+  color: #00ffd0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
