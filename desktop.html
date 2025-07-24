@@ -1,0 +1,52 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PUABO OS V200 Boot</title>
+  <style>
+    body {
+      background-color: black;
+      color: limegreen;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 20vh;
+      margin: 0;
+    }
+    .fade {
+      opacity: 1;
+      transition: opacity 1.5s ease-in-out;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+    button {
+      background-color: limegreen;
+      color: black;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="boot" class="fade">
+    <h1>PUABO OS V200</h1>
+    <p>All systems connected. Ready to deploy.</p>
+    <button onclick="launchOS()">Launch PUABO OS</button>
+  </div>
+
+  <script>
+    function launchOS() {
+      const boot = document.getElementById('boot');
+      boot.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = 'desktop.html';
+      }, 1500); // wait for fade-out effect
+    }
+  </script>
+</body>
+</html>
