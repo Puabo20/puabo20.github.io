@@ -2,10 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PUABO OS V200 - OS Dashboard</title>
+  <title>PUABO OS V200 - Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      border-bottom: 2px solid #00ffcc;
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .module-card {
+      background-color: #222;
+      border: 1px solid #00ffcc;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    .module-card:hover {
+      background-color: #00ffcc;
+      color: #000;
+    }
+
+    .module-card h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .module-card p {
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to the PUABO OS Interface</h1>
-  <p>This is the main OS module screen. Build your modules here.</p>
+
+<header>
+  PUABO OS V200 Interface
+</header>
+
+<section class="module-grid">
+  <div class="module-card">
+    <h3>V-Caster</h3>
+    <p>Live Streaming & Control Center</p>
+  </div>
+  <div class="module-card">
+    <h3>StreamCore</h3>
+    <p>Broadcast Engine & Layer Controls</p>
+  </div>
+  <div class="module-card">
+    <h3>PUABOAI SDK</h3>
+    <p>AI Assistant + Task Automation</p>
+  </div>
+  <div class="module-card">
+    <h3>Glitch: Code of Chaos</h3>
+    <p>Frontend Editor / Visual Builder</p>
+  </div>
+  <div class="module-card">
+    <h3>MusicChain</h3>
+    <p>Royalty + Publishing System</p>
+  </div>
+  <div class="module-card">
+    <h3>V-Screen</h3>
+    <p>Visual Layer Manager</p>
+  </div>
+</section>
+
 </body>
 </html>
