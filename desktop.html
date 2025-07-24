@@ -1,52 +1,58 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PUABO OS V200 Boot</title>
+  <title>PUABO OS Desktop</title>
   <style>
     body {
-      background-color: black;
-      color: limegreen;
-      font-family: monospace;
-      text-align: center;
-      padding-top: 20vh;
       margin: 0;
+      background: #0d0d0d;
+      color: #00ffcc;
+      font-family: monospace;
     }
-    .fade {
-      opacity: 1;
-      transition: opacity 1.5s ease-in-out;
+
+    header {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #00ffcc;
     }
-    .fade-out {
-      opacity: 0;
+
+    .desktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      gap: 2rem;
     }
-    button {
-      background-color: limegreen;
-      color: black;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border: none;
+
+    .app-icon {
+      background: #1a1a1a;
+      border: 2px solid #00ffcc;
+      border-radius: 12px;
+      padding: 1rem;
+      width: 120px;
+      text-align: center;
+      transition: transform 0.2s;
       cursor: pointer;
-      margin-top: 20px;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.05);
+      background: #00ffcc;
+      color: #000;
     }
   </style>
 </head>
 <body>
-  <div id="boot" class="fade">
-    <h1>PUABO OS V200</h1>
-    <p>All systems connected. Ready to deploy.</p>
-    <button onclick="launchOS()">Launch PUABO OS</button>
+  <header>PUABO OS V200 - Desktop</header>
+  <div class="desktop">
+    <div class="app-icon" onclick="alert('Launching PUABO V-Caster...')">V-Caster</div>
+    <div class="app-icon" onclick="alert('Opening StreamCore...')">StreamCore</div>
+    <div class="app-icon" onclick="alert('Loading Glitch: Code of Chaos...')">Glitch</div>
+    <div class="app-icon" onclick="alert('Accessing V-Stage...')">V-Stage</div>
+    <div class="app-icon" onclick="alert('Launching PUABOMusicChain...')">MusicChain</div>
+    <div class="app-icon" onclick="alert('Booting PV-Keys...')">PV-Keys</div>
   </div>
-
-  <script>
-    function launchOS() {
-      const boot = document.getElementById('boot');
-      boot.classList.add('fade-out');
-      setTimeout(() => {
-        window.location.href = 'desktop.html';
-      }, 1500); // wait for fade-out effect
-    }
-  </script>
 </body>
 </html>
