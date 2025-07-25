@@ -1,75 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>PUABO OS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PUABO OS V200</title>
   <style>
-    body {
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      font-family: Arial, sans-serif;
       display: flex;
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d0d0d;
-      color: white;
+      flex-direction: row;
+      background: #111;
+      color: #eee;
     }
-
-    .sidebar {
+    #sidebar {
       width: 220px;
-      height: 100vh;
-      background-color: #000;
-      border-right: 3px solid #00ffd0;
+      background: #222;
       display: flex;
       flex-direction: column;
-      padding-top: 20px;
-      position: fixed;
-      left: 0;
-      top: 0;
-      z-index: 1000;
+      padding-top: 10px;
+      box-sizing: border-box;
     }
-
-    .sidebar-title {
-      font-size: 24px;
-      font-weight: bold;
-      color: #00ffd0;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .sidebar a {
+    #sidebar button {
+      background: transparent;
+      border: none;
+      color: #eee;
       padding: 12px 20px;
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
+      text-align: left;
       font-size: 16px;
+      cursor: pointer;
+      border-left: 4px solid transparent;
+      transition: background 0.3s, border-color 0.3s;
     }
-
-    .sidebar a:hover {
-      background-color: #1a1a1a;
-      color: #00ffd0;
+    #sidebar button:hover,
+    #sidebar button.active {
+      background: #444;
+      border-left: 4px solid #0af;
     }
-
-    .main-content {
-      margin-left: 220px;
-      padding: 30px;
+    #main-content {
       flex: 1;
+      background: #181818;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+    @media (max-width: 600px) {
+      body {
+        flex-direction: column;
+      }
+      #sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+      }
+      #sidebar button {
+        flex: 1;
+        padding: 10px;
+        font-size: 14px;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+      }
+      #sidebar button:hover,
+      #sidebar button.active {
+        border-left: none;
+        border-bottom: 3px solid #0af;
+      }
+      #main-content {
+        padding: 10px;
+        height: 70vh;
+      }
     }
   </style>
 </head>
 <body>
-
-  <div class="sidebar">
-    <div class="sidebar-title">PUABO OS</div>
-    <a href="#">📊 Dashboard</a>
-    <a href="#">🧩 Modules</a>
-    <a href="#">🎬 Media Center</a>
-    <a href="#">📡 StreamCore</a>
-    <a href="#">⚙️ Settings</a>
+  <div id="sidebar">
+    <button data-module="system-dashboard" class="active">System Dashboard</button>
+    <button data-module="streamcore">StreamCore</button>
+    <button data-module="v-caster">V-Caster</button>
+    <button data-module="glitch">Glitch: Code of Chaos</button>
+    <button data-module="puabomusicchain">PUABOMusicChain</button>
+  </div>
+  <div id="main-content">
+    Loading System Dashboard...
   </div>
 
-  <div class="main-content">
-    <h1>Welcome to PUABO OS</h1>
-    <p>Select a section from the sidebar to begin exploring your system.</p>
-  </div>
-
+  <script src="app.js"></script>
 </body>
 </html>
